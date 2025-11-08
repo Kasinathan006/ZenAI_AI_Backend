@@ -1,0 +1,99 @@
+.chatbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  height: 70vh;
+  overflow-y: auto;
+  background-color: #0f1117;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+.chatbox-container::-webkit-scrollbar {
+  width: 6px;
+}
+.chatbox-container::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+/* Chat bubble base */
+.chat-bubble {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  transition: all 0.3s ease;
+}
+
+/* User message bubble */
+.chat-bubble.user {
+  align-self: flex-end;
+  background: #2b2e3b;
+  color: #e6e6e6;
+  border-bottom-right-radius: 2px;
+}
+
+/* Assistant message bubble */
+.chat-bubble.assistant {
+  align-self: flex-start;
+  background: #1a1c25;
+  border-left: 3px solid #5b61ff;
+  color: #d4d4d4;
+  border-bottom-left-radius: 2px;
+}
+
+/* Markdown support */
+.markdown p {
+  margin: 0 0 10px 0;
+}
+.markdown code {
+  background: #252a35;
+  color: #90e0ef;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+.markdown pre {
+  background: #1b1e27;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+.markdown strong {
+  color: #f0f0f0;
+}
+
+/* Typing animation dots */
+.typing {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: #888;
+  border-radius: 50%;
+  animation: blink 1.4s infinite both;
+}
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 1;
+  }
+}
