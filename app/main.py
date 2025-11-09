@@ -17,7 +17,7 @@ from fastapi.staticfiles import StaticFiles
 from dotenv import load_dotenv
 from groq import Groq
 from langchain_groq import ChatGroq
-from langchain.schema import HumanMessage
+from langchain_core.messages import HumanMessage
 
 # --- Local App Imports ---
 from app.integrations.notion_integration import NotionIntegration
